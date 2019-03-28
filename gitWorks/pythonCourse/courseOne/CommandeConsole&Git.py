@@ -1,4 +1,9 @@
 # """
+#git clone
+#git add courseOne
+#git commit -m "test"
+#git status
+#git push
 # Les raccourci powershell 
 # The command "pwd" (print working directory)
 # pwd
