@@ -1523,22 +1523,22 @@
 
 
 # jouer avec iter en inserant des func
-def iterString(x, func):
-    c = iter(x)
-    while True:
-        try:
-            test = next(c)
-        except StopIteration:
-            print("End Of Iterator")
-            break
-        else:
-            func(test)
+# def iterString(x, func):
+#     c = iter(x)
+#     while True:
+#         try:
+#             test = next(c)
+#         except StopIteration:
+#             print("End Of Iterator")
+#             break
+#         else:
+#             func(test)
 
-def square(x):
-    print(x*x)
+# def square(x):
+#     print(x*x)
 
-iterString("Oprah", print)
-iterString([1,2,3,4,5], square)
+# iterString("Oprah", print)
+# iterString([1,2,3,4,5], square)
 
 # Result
 # O
@@ -1555,6 +1555,24 @@ iterString([1,2,3,4,5], square)
 # End Of Iterator
 
 
+class Counter:
+    def __init__(self, low , high):
+        self.current = low
+        self.high = high
+
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        if self.current < self.high:
+            num = self.current
+            self.current += 1
+            return num
+        raise StopIteration
+
+c = Counter(1,10)
+v = iter(c)
+print(next(v))
 
 
 
